@@ -1,0 +1,15 @@
+{
+  "name": "enskild_fem",
+  "version": "1.0.0",
+  "description": "assignment for UX cousre",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwind build src/style.css -o public/style.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "marcus larsson <marcus.b.larsson@outlook.com>",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.0.23"
+  }
+}
