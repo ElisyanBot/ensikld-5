@@ -130,17 +130,21 @@ const matchIndicator = document.querySelector("#match-indicator");
 
 password.addEventListener("keyup", () => {
   if (password.value != rePassword.value) {
+    btn.style.backgroundColor = "gray";
     btn.disabled = true;
   } else {
     btn.disabled = false;
+    btn.style.backgroundColor = "#1E428A";
   }
 });
 
 rePassword.addEventListener("keyup", () => {
   if (password.value != rePassword.value) {
+    btn.style.backgroundColor = "gray";
     btn.disabled = true;
   } else {
     btn.disabled = false;
+    btn.style.backgroundColor = "#1E428A";
   }
 
   if (btn.disabled == true) {
