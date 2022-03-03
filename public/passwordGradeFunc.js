@@ -18,28 +18,26 @@ password.addEventListener("keyup", () => {
   passwordPoints += plusPointsForSign(newPassword);
 
   renderText(gradePassword(passwordPoints));
-
 });
 
-
-function renderText(gradeFunc){
+function renderText(gradeFunc) {
   const gradeText = document.querySelector("#grade-text");
   gradeText.innerText = gradeFunc;
 
-  if(gradeText.innerText == "very weak"){
-    gradeText.style.color = "red"
+  if (gradeText.innerText == "very weak") {
+    gradeText.style.color = "red";
   }
-  if(gradeText.innerText == "weak"){
-    gradeText.style.color = "orange"
+  if (gradeText.innerText == "weak") {
+    gradeText.style.color = "orange";
   }
-  if(gradeText.innerText == "medium"){
-    gradeText.style.color = "#ebff33"
+  if (gradeText.innerText == "medium") {
+    gradeText.style.color = "#ebff33";
   }
-  if(gradeText.innerText == "strong"){
-    gradeText.style.color = "#7cc953"
+  if (gradeText.innerText == "strong") {
+    gradeText.style.color = "#7cc953";
   }
-  if(gradeText.innerText == "very strong"){
-    gradeText.style.color = "#29ff08"
+  if (gradeText.innerText == "very strong") {
+    gradeText.style.color = "#29ff08";
   }
 }
 
@@ -52,8 +50,6 @@ function gradePassword(points) {
   if (points >= 15) grade = "very strong";
   return grade;
 }
-
-
 
 // ===================== negative points =========================
 function negativeForOnlyLowerCase(obj) {
@@ -126,18 +122,31 @@ function passwordObj(inputValue) {
   };
 }
 
-/*
-  - password lenth = 1 point per char
-  - if character == character.toUpperCase() = 1 point
-  - if character == number = 1 point
-  - if !number or !letter = 1point
-  
-  - if capital letter != ture = - 2 points
-  - if number != true = - 2 points
+/*=================================  checks that passowords match  ===================================================*/
 
-  < 6 = väldigt svagt
-  6 point = svagt
-  10 points = medium
-  12 points = strong
-  15 points = very strong
-*/
+const rePassword = document.querySelector("#signUp-rePassword");
+const btn = document.querySelector("button[type='submit']");
+const matchIndicator = document.querySelector("#match-indicator");
+
+password.addEventListener("keyup", () => {
+  if (password.value != rePassword.value) {
+    btn.disabled = true;
+  } else {
+    btn.disabled = false;
+  }
+});
+
+rePassword.addEventListener("keyup", () => {
+  if (password.value != rePassword.value) {
+    btn.disabled = true;
+  } else {
+    btn.disabled = false;
+  }
+
+  if (btn.disabled == true) {
+    matchIndicator.style.color = "red";
+    matchIndicator.innerText = "not the same";
+  } else {
+    matchIndicator.innerHTML = "";
+  }
+});
