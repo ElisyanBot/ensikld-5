@@ -13,44 +13,57 @@
         class="bg-sky-600 container flex flex-col w-80 p-5 rounded-md m-auto"
       >
         <!-- username input -->
-        <label class=" font-medium text-white" for="login-user-name">
-          Enter a username:</label
-        >
+        <label class="font-medium text-white" for="login-user-name">
+          Enter a username:
+        </label>
+
         <input
           class="bg-sky-100 p-2 border-gray-800 border rounded-sm mb-2"
           type="text"
           id="login-user-name"
           placeholder="username"
+          required
         />
-        <!-- username input -->
-        <label class=" font-medium text-white" for="login-user-mail">
-          Enter a valid E-mail: </label
-        >
+
+        <!-- email input -->
+        <label class="font-medium text-white" for="login-user-mail">
+          Enter a valid E-mail:
+        </label>
+
         <input
           class="bg-sky-100 p-2 border-gray-800 border rounded-sm mb-2"
           type="email"
           id="login-user-mail"
           placeholder="enter email"
+          required
         />
+
         <!-- password input -->
-        <label class=" font-medium text-white" for="signUp-password"
-          >Enter a password: </label
-        >
+        <label class="font-medium text-white" for="signUp-password"
+          >Enter a password:    <i id="grade-text"></i>
+        </label>
+
         <input
           class="bg-sky-100 p-2 border-gray-800 border rounded-sm mb-2"
           type="password"
-          id="login-password"
+          id="signUp-password"
           placeholder="password"
+          autocomplete="on"
+          minlength="6"
+          required
         />
-        <!-- password input -->
-        <label class=" font-medium text-white " for="signUp-re:password "
-          >Re:enter password: </label
-        >
+
+        <!-- re:password input -->
+        <label class="font-medium text-white" for="signUp-rePassword "
+          >Re:enter password:  <i id="match-indicator"></i>
+        </label>
         <input
+          id="signUp-rePassword"
           class="bg-sky-100 p-2 border-gray-800 border rounded-sm mb-2"
           type="password"
-          id="login-password"
           placeholder="password"
+          autocomplete="on"
+          required
         />
         <!-- submit btn  -->
         <button
@@ -58,8 +71,9 @@
           type="submit"
         >
           sign up
-        </button>
+        </button >
       </form>
     </main>
+    <script src="./passwordGradeFunc.js"></script>
   </body>
 </html>
